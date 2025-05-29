@@ -1,3 +1,4 @@
+/* Hintergrund- und Body-Styling */
 body {
   margin: 0;
   padding: 0;
@@ -11,57 +12,66 @@ body {
   overflow: hidden;
 }
 
+/* Login-Container */
 .login-container {
   background: #14294b;
   padding: 35px;
   border-radius: 15px;
   box-shadow: 0 0 30px rgba(0,0,0,0.6);
-  width: 320px;
+  width: 340px;
   text-align: center;
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
+/* Sichtbarkeit nach Fade-In */
 .login-container.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+/* LSPD-Logo */
 .logo {
   width: 80px;
   margin-bottom: 10px;
 }
 
+/* Titel */
 h2 {
   margin: 10px 0 5px;
   font-size: 22px;
   color: #00aaff;
 }
 
+/* Untertitel */
 .subtitle {
   font-size: 13px;
   margin-bottom: 20px;
   color: #aaa;
 }
 
-input[type="text"], input[type="password"] {
-  width: 100%;
+/* Eingabefelder */
+input[type="text"],
+input[type="password"] {
+  width: 240px;
   padding: 12px;
-  margin: 10px 0;
+  margin: 10px auto;
   border: none;
   border-radius: 10px;
   background: #223b66;
   color: #fff;
   font-size: 14px;
+  display: block;
 }
 
 input::placeholder {
   color: #ccc;
 }
 
+/* Login-Button */
 button {
-  width: 100%;
+  width: 240px;
   padding: 12px;
   background-color: #0078ff;
   color: white;
@@ -71,12 +81,15 @@ button {
   font-weight: bold;
   font-size: 15px;
   transition: background-color 0.3s ease;
+  margin: 10px auto 0;
+  display: block;
 }
 
 button:hover {
   background-color: #005fcc;
 }
 
+/* Login-Meldungen */
 #message {
   margin-top: 15px;
   font-weight: bold;
