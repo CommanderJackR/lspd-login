@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LSPD Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="login-container">
+    <img src="https://i.ibb.co/5gR8SmSv/lspd-logo.png" alt="LSPD Logo" class="logo">
+    <h2>Los Santos Police Department</h2>
+    <p class="subtitle">Zugangsportal für autorisiertes Personal</p>
+    <form onsubmit="return login(event)">
+      <input type="text" id="username" placeholder="Benutzername" required>
+      <input type="password" id="password" placeholder="Passwort" required>
+      <button type="submit">Einloggen</button>
+    </form>
+    <p id="message"></p>
+  </div>
+
+  <script>
+    function login(event) {
+      event.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+      const msg = document.getElementById("message");
+
+      if (user === "instructor.lspd" && pass === "secure123") {
+        msg.textContent = "Login erfolgreich. Weiterleitung...";
+        msg.style.color = "lightgreen";
+        setTimeout(() => {
+          window.location.href = "https://sites.google.com/view/san-andreas-lspd/intructor/instructor";
+        }, 1000);
+      } else if (user === "leitung.lspd" && pass === "admin456") {
+        msg.textContent = "Login erfolgreich. Zugriffsebene: Leitung.";
+        msg.style.color = "lightgreen";
+        // Optional: Hier später Weiterleitung ergänzen
+      } else {
+        msg.textContent = "Zugangsdaten ungültig!";
+        msg.style.color = "red";
+      }
+    }
+
+    // Fade-in Animation beim Laden
+    window.onload = () => {
+      document.querySelector(".login-container").classList.add("visible");
+    };
+  </script>
+</body>
+</html>
