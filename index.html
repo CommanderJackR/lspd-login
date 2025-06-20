@@ -35,6 +35,9 @@
       } else if (user === "leitung.lspd" && pass === "admin456") {
         msg.textContent = "Login erfolgreich. Zugriffsebene: Leitung.";
         msg.style.color = "lightgreen";
+        setTimeout(() => {
+          window.location.href = "https://sites.google.com/view/san-andreas-lspd/login-seiten/leitungsebene";
+        }, 1000);
         // Optional: Hier später Weiterleitung ergänzen
       } else {
         msg.textContent = "Zugangsdaten ungültig!";
